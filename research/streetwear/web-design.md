@@ -17,9 +17,10 @@ BRAND DNA → WEB DESIGN STRATEGY → MOCK-UP → DEVELOPMENT
 The strategy document becomes a persistent specification consumed by a mock-up agent (Claude Code) to produce web designs grounded in explicit strategic intent rather than aesthetic assumption.
 
 Relevant existing docs:
-- Brand DNA research: `docs/research/brand-dna.md`
-- Brand DNA specification: `src/agent/docs/brand/brand-dna.md`
-- Brand discovery workflow: `src/agent/.claude/agents/consultant/capabilities/brand-discovery.md`
+- Brand DNA research: `research/streetwear/brand-dna.md`
+- Brand DNA specification: `brands/<brand>/brand-dna.md`
+- Web design skill: `.claude/skills/web-design.md`
+- Consultant agent: `.claude/agents/consultant.md`
 
 ---
 

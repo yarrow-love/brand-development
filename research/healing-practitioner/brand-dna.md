@@ -135,7 +135,7 @@ Color choice depends entirely on the *specific modality* — a somatic healing p
 - What healing modalities do you practice and how do they intersect?
 - What is your healing philosophy in your own words?
 - What does "healing" mean to you?
-- How do you describe your work to someone who has never heard o[text](../../../atelier/src/agent/.claude/agents/consultant/capabilities/brand-discovery.md) [text](../../../atelier/src/agent/.claude/agents/consultant/capabilities/web-design.md)f it?
+- How do you describe your work to someone who has never heard of it?
 
 **Vision & Direction**
 - Where do you see your practice in 3–5 years?

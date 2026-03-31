@@ -301,12 +301,15 @@ Serve with: `npx http-server brands/<brand>/mock-up/ -p 8080`
 
 ## Integration with Final Build
 
-The approved mock-up becomes the visual specification for the final build phase:
+The approved mock-up becomes the visual specification for the final build phase. Check `research/<industry>/tech-stack.md` for the recommended production stack (e.g., Astro + Cloudflare Pages + Cal.com + Decap CMS for healing practitioners).
 
-- **HTML structure** provides the template for production pages
-- **Tailwind classes** translate directly to the production CSS approach
-- **Images** serve as placeholders until professional brand photography is produced (or remain if stock is acceptable)
-- **Copy** is production-ready — it was approved during the `/write-copy` phase
+The final build converts the mock-up into a production site:
+
+- **HTML structure** → Astro components (`.astro` files)
+- **Tailwind CDN** → `@astrojs/tailwind` integration (build-time CSS)
+- **Copy** → structured content files (YAML/Markdown) editable via CMS
+- **Images** → placeholders until professional brand photography is produced (or remain if stock is acceptable)
+- **Scheduling** → Cal.com embed (or equivalent) replacing placeholder booking sections
 - **build-notes.md** documents every interpretive decision for the developer
 
 The mock-up at `brands/<brand>/mock-up/` should be preserved as a visual reference even after the final build is complete.

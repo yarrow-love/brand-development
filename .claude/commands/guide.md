@@ -19,6 +19,7 @@ You are beginning a brand development consultation. This session will walk the c
 
 Read `.claude/skills/brand-discovery.md` and begin the discovery interview.
 
+- You already know the client's name and what they do from the greeting — don't re-ask. Use that context to skip the brand-discovery skill's initial identification step and move directly into the interview.
 - Create `brands/<brand>/` directory using a slug of the brand name
 - Guide the client through the six interview phases (origin, personality, audience, visual, constraints, positioning)
 - Follow the pacing and synthesis principles — one question at a time, reflect back after each phase

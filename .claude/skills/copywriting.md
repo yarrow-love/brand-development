@@ -52,6 +52,8 @@ The voice established here becomes the reference standard for every section.
 
 ### Step 2 — Draft Section by Section
 
+**Context window note:** Copywriting is the longest interactive phase. For sites with many pages/sections, consider dispatching a subagent to generate initial drafts for all sections after the voice is established and the first 2–3 sections are approved. The subagent reads the Brand DNA, strategy spec, approved voice direction, and the approved sections as voice examples, then drafts the remaining sections to `brands/<brand>/copy-drafts.md`. The consultant then reviews these drafts with the client one at a time in the main thread — revising rather than writing from scratch. This keeps the main thread focused on the review-and-revise cycle rather than generation.
+
 Work through the site in the order defined by the web design strategy spec. For each section:
 
 1. **State the section's job.** "This is the homepage hero. Its job is to [purpose from strategy spec]. The primary audience is [audience]. The CTA is [CTA]."
@@ -290,6 +292,7 @@ pages:
 - The `voice` field in the frontmatter is the consistency anchor — reference it throughout
 - Every section's copy must serve that section's stated purpose from the web design strategy
 - Flag any factual claims that the client needs to verify
+- **YAML string safety:** In multi-line YAML fields (using `|` block scalar), avoid special characters that break YAML parsing: no bare colons followed by spaces mid-line, no leading `#` characters, no unescaped quotes. If the copy contains these, wrap the value in double quotes or use `>` folded scalar instead. The mock-up subagent reads these fields programmatically.
 
 ## Integration with Mock-up Phase
 

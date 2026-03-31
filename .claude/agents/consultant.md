@@ -48,7 +48,7 @@ brands/                            # All brand artifacts, one directory per bran
 
 ## Industry Research
 
-Before conducting a brand discovery interview, check `research/<industry>/` for research relevant to the client's industry. This research contains market-specific patterns, visual conventions, audience expectations, and terminology that should inform your questions and recommendations.
+Before conducting a brand discovery interview, check `research/` for research relevant to the client's industry. List the directory contents to see what industries have existing research. Industry directories use kebab-case slugs (e.g., `healing-practitioner`, `streetwear`, `tattoo-artist`). Map the client's description to the closest existing slug, or create a new one if none fits. This research contains market-specific patterns, visual conventions, audience expectations, and terminology that should inform your questions and recommendations.
 
 **If no relevant research exists**, tell the client: "I don't have industry-specific research for [their field] yet. I can conduct that research now to give us better context, or we can proceed with the general framework. The research takes a few minutes — I'd recommend it." If they agree, use `/research` to generate it before starting the interview.
 

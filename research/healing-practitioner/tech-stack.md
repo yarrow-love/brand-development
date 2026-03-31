@@ -20,7 +20,7 @@ Prior experience: Astro + Koalendar integration was unsatisfactory — the sched
 Relevant existing docs:
 - Mock-up skill: `.claude/skills/mockup.md`
 - Web design research: `research/healing-practitioner/web-design.md`
-- Cal.com payment research: `research/healing-practitioner/cal-com-payment-integration.md`
+- Cal.com payment research: consolidated into this document (Section 3, Cal.com)
 
 ---
 

@@ -17,9 +17,9 @@ DISCOVER (brand DNA) → CONSULT → GENERATE → ANALYZE → SCORE → FEEDBACK
 The DNA document becomes a persistent reference stored as collection metadata or workspace-level notes, grounding all subsequent meta-prompts in explicit brand identity rather than implicit visual sampling.
 
 Relevant existing docs:
-- Consultant agent config: `src/agent/.claude/agents/consultant/CLAUDE.md`
-- Collection analysis workflow: `src/agent/.claude/agents/consultant/capabilities/analyze-collection.md`
-- Library tools (metadata/notes storage): `src/agent/.claude/agents/consultant/capabilities/library-tools.md`
+- Consultant agent: `.claude/agents/consultant.md`
+- Brand discovery skill: `.claude/skills/brand-discovery.md`
+- Brand DNA specification: `brands/<brand>/brand-dna.md`
 
 ## Findings
 
