@@ -101,7 +101,9 @@ Connect visual codes back to the values and personality established in earlier p
 
 ## Output Format
 
-When the interview reaches clear alignment, write the DNA specification to `brands/<brand>/brand-dna.md` using this structure:
+When the interview reaches clear alignment, write the DNA specification to `brands/<brand>/brand-dna.md` using **pure markdown** — no YAML code blocks. The document should read like a brand identity brief, not a config file. Use headings for structure, prose for narrative content, bullet lists for enumerated items, and tables where structured data genuinely benefits from it (color palettes, brand spectra).
+
+Write the DNA to `brands/<brand>/brand-dna.md` using this structure:
 
 ```markdown
 ---
@@ -114,80 +116,175 @@ last_updated: YYYY-MM-DD
 
 ## Identity
 
-```yaml
-name: ""
-tagline: ""
-origin_story: |
-  Multi-line narrative in the client's own words
-communities: []     # traditions, movements, subcultures that shaped the brand
-```
+**Name:** {name}
+**Tagline:** {tagline}
+
+### Origin Story
+
+{Multi-line narrative in the client's own words}
+
+### Communities & Lineages
+
+- {traditions, movements, subcultures that shaped the brand}
+
+---
 
 ## Core
 
-```yaml
-purpose: ""
-values: []           # 3-5, not more
-personality_traits: []  # 3-5, not more
-archetype: ""        # Jungian or custom — whichever fits
-brand_essence: ""    # 3-5 word distillation
-```
+### Purpose
+
+{What would be missing from the world without this brand}
+
+### Values
+
+1. **{Value}** — {Description}
+{3-5 values, numbered for priority}
+
+### Personality
+
+- **{Trait}** — {Description}
+{3-5 traits}
+
+**Archetype:** {Jungian or custom — whichever fits}
+**Brand essence:** {3-5 word distillation}
+
+---
+
+## Role
+
+{Who the practitioner/founder is and how they see their work — in their own words}
+
+### Philosophy
+
+{Their worldview and approach, in their own language}
+
+---
+
+## Offerings
+
+{Brief intro connecting the offerings to the brand identity}
+
+### {Offering Name} *(signature offering)*
+
+{Description — what it is, what it does, why it matters}
+
+### {Offering Name}
+
+{Description}
+
+{Repeat for each offering}
+
+---
 
 ## Audience
 
-```yaml
-ideal_client: ""     # by mindset and needs, not demographics
-client_journey: ""   # how they find and experience the brand
-relationship: ""     # the model of connection
-not_for: ""          # who the brand does not serve
-```
+### Ideal Client
+
+{By mindset, life stage, and needs — not demographics}
+
+### How They Find {Name}
+
+{Discovery pathway}
+
+### Relationship Model
+
+{The model of connection}
+
+### Not For
+
+{Who the brand does not serve — defining the boundary sharpens the center}
+
+---
 
 ## Visual Codes
 
-```yaml
-color_palette:
-  primary: []        # with hex values
-  secondary: []
-  accent: []
-  mood: ""
-typography:
-  direction: ""
-  characteristics: ""
-imagery:
-  style: ""
-  subjects: []
-  mood: ""
-textures_materials: []
-spatial_feeling: ""  # what the brand feels like as a physical space
-cultural_references: []
-```
+### Color Palette
+
+| Role | Color | Quality |
+|---|---|---|
+| Primary | {Color name} | {What it expresses} |
+| Secondary | {Color name} | {What it expresses} |
+| Accent | {Color name} | {What it expresses} |
+
+**Color mood:** {The overall feeling of the palette — in the client's own words where possible}
+
+### Typography
+
+{Direction, characteristics, and rationale — in prose}
+
+### Imagery
+
+{Style, mood, and subject matter — in prose}
+
+**Subjects:** {Key visual subjects}
+
+**Textures & materials:** {Material qualities}
+
+### Spatial Feeling
+
+{If the brand were a physical space, what would it look, feel, and sound like — in the client's own words}
+
+### Cultural References
+
+- {References that inform the visual and conceptual world}
+
+---
 
 ## Positioning
 
-```yaml
-market_context: ""
-competitors: []
-differentiation: ""
-price_tier: ""
-brand_spectra: {}    # where the brand sits on relevant axes
-```
+### Market Context
+
+{Where the brand sits in its landscape}
+
+### Differentiation
+
+{What sets this brand apart — the edge}
+
+### Price Positioning
+
+{Pricing philosophy and its implications}
+
+### Brand Spectra
+
+| Axis | Position |
+|---|---|
+| {Spectrum} | {Where the brand sits} |
+
+### Competitors
+
+{Known competitors or "to be explored in reference gathering phase"}
+
+---
 
 ## Design Rules
 
-```yaml
-always: []
-never: []
-signature_elements: []
-one_sentence: ""     # "This brand always feels like ___"
-```
+### Always
+
+- {Actionable constraint}
+
+### Never
+
+- {Actionable constraint}
+
+### Signature Elements
+
+{Elements that should recur — or "to emerge through reference gathering and mock-up"}
+
+### One Sentence
+
+> This brand always feels like {___}.
 ```
 
 ### Writing Guidelines
 
+- **Pure markdown, no YAML.** The document should read like a brand identity brief. Headings provide structure; prose carries the narrative; tables and lists organize structured data.
 - Use the client's own words wherever possible — DNA should sound like them, not like a branding agency
 - Be specific in visual codes — "burnt orange (#CC5500)" not just "orange"
 - Keep values and traits to 3-5 items each — more than that means nothing is prioritized
 - Design rules should be actionable constraints, not aspirational statements
-- The `always` / `never` / `signature_elements` lists are the most operationally important fields — invest time getting them right
+- The Always / Never / Signature Elements sections are the most operationally important — invest time getting them right
+- Include an Offerings section when the client has defined their services — downstream phases (especially web design and copywriting) need to know what they're building around
+- Include a Role section when the client has articulated their identity and philosophy in their own words — this grounds the voice for copywriting
 
 ## Integration with Downstream Phases
 

@@ -10,7 +10,7 @@ Follow the protocol defined in `.claude/skills/copywriting.md`:
 4. **Establish voice** — propose a voice direction based on Brand DNA personality. Give a concrete example. Get explicit client approval before drafting any sections.
 5. **Draft section by section** — work through the site in strategy spec order. For each section: state its job, draft the copy, present it, invite critique, revise until approved. One section at a time.
 6. **Review for consistency** — after all sections are drafted, read the complete document for voice consistency, message hierarchy, CTA flow, and accuracy.
-7. **Record** — write the completed copy to `brands/<brand>/copy.md` using the YAML-in-markdown format from the skill. Present the final document to the client for confirmation.
+7. **Record** — write the completed copy to `brands/<brand>/copy.md` using the pure markdown format from the skill. Present the final document to the client for confirmation.
 
 The three non-negotiables: accuracy (flag anything you're inferring for client verification), priorities (the client's most important messages get the most prominent placement), and voice (every sentence should pass the "does this sound like the brand?" test).
 

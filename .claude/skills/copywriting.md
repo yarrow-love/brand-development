@@ -143,7 +143,9 @@ The web design strategy defines the primary audience and their jobs to be done. 
 
 ## Output Format
 
-Write the completed copy to `brands/<brand>/copy.md`:
+Write the completed copy to `brands/<brand>/copy.md` using **pure markdown** — no YAML code blocks. The document should read like finished website copy, not a data file. Use headings for page/section structure, bold labels for element types (headline, body, CTA), and prose for the actual copy. CTA destinations use arrow notation: `CTA text → /route`.
+
+Write the copy to `brands/<brand>/copy.md` using this structure:
 
 ```markdown
 ---
@@ -158,133 +160,163 @@ voice: "{one-line voice description approved by client}"
 
 ## Voice Reference
 
-```yaml
-personality: ""        # from Brand DNA
-tone: ""               # approved voice direction
-speaks_like: ""        # analogy or description
-avoids: []             # words, phrases, or tones that are off-brand
-```
+**Personality:** {from Brand DNA}
+**Tone:** {approved voice direction}
+**Speaks like:** {analogy or description}
+**Three words:** {three-word voice summary}
+**Avoids:** {words, phrases, or tones that are off-brand}
+
+---
 
 ## Homepage
 
 ### Hero
-```yaml
-headline: ""
-subheadline: ""
-cta:
-  label: ""
-  destination: ""
-supporting_text: ""    # optional paragraph below headline
-```
+
+**Headline:**
+{headline text}
+
+**Subheadline:**
+{subheadline text}
+
+**CTA button:** {label} → `/route`
+
+**Supporting text:**
+{optional paragraph below headline}
 
 ### Who I Help
-```yaml
-lead: ""               # 1-2 sentences naming the pain
-body: ""               # expanded description
-```
 
-### Services Overview
-```yaml
-intro: ""              # framing sentence
-services:
-  - name: ""
-    description: ""    # 1-2 sentences
-    cta: ""
-```
+**Lead:**
+{1-2 sentences naming the pain or aspiration}
+
+**Body:**
+{expanded description — empathy before solutions}
+
+### Offering Overview
+
+**Intro:**
+{framing sentence}
+
+**{Offering Name}**
+{1-2 sentence description}
+
+{repeat for each offering}
+
+**CTA:** {label} → `/route`
 
 ### About Preview
-```yaml
-lead: ""               # hook that draws visitor to full about page
-cta: ""
-```
+
+**Lead:**
+{hook that draws visitor to full about page}
+
+**CTA:** {label} → `/route`
 
 ### Social Proof
-```yaml
-intro: ""              # framing text for testimonials
-testimonials_note: ""  # guidance on which testimonials to feature
-```
+
+**Intro:**
+{framing text for testimonials}
+
+*[Client testimonials placed here]*
 
 ### Final CTA
-```yaml
-headline: ""
-body: ""
-cta:
-  label: ""
-  destination: ""
-```
+
+**Headline:**
+{headline}
+
+**Body:**
+{warm invitation}
+
+**CTA button:** {label} → `/route`
+
+---
 
 ## About Page
 
-```yaml
-headline: ""
-origin_story: |
-  Multi-paragraph narrative
-philosophy: ""
-approach: ""
-credentials: ""        # woven in naturally, not listed
-closing_cta:
-  text: ""
-  label: ""
-  destination: ""
-```
+**Headline:**
+{headline}
 
-## Services
+**Origin Story:**
+{multi-paragraph narrative in first person}
 
-### {Service Name}
-```yaml
-headline: ""
-what_it_is: ""         # plain language explanation
-who_its_for: ""        # specific audience for this service
-what_to_expect: ""     # session description
-outcomes: ""           # what clients experience (not health claims)
-pricing: ""
-cta:
-  label: ""
-  destination: ""
-```
+**Philosophy:**
+{how the practitioner sees and approaches the work}
 
-## FAQ
+**Approach:**
+{what working together looks like}
 
-```yaml
-intro: ""
-questions:
-  - q: ""
-    a: ""
-```
+**Closing:**
+{warm closing statement}
 
-## Contact / Booking
+**CTA:** {label} → `/route`
 
-```yaml
-headline: ""
-body: ""               # warm invitation to take the next step
-details: ""            # location, telehealth, hours
-cta:
-  label: ""
-  destination: ""
-```
+---
+
+## Offerings
+
+### {Offering Name} *(signature offering)*
+
+**Headline:** {headline}
+
+**What it is:**
+{plain language explanation}
+
+**Who it's for:**
+{specific audience for this offering}
+
+**What to expect:**
+{session description — experience language, not mechanism language}
+
+**CTA:** {label} → `/route`
+
+{repeat for each offering}
+
+---
+
+## Testimonials Page
+
+**Headline:** {headline}
+
+**Intro:**
+{framing text}
+
+*[Client testimonials placed here]*
+
+---
+
+## Contact / Book Page
+
+**Headline:** {headline}
+
+**Body:**
+{warm invitation to take the next step}
+
+**Details:**
+- **Phone:** {number}
+- **Email:** {address}
+- {session format, location, availability}
+
+**CTA button:** {label} → `/route`
+
+---
 
 ## Footer
 
-```yaml
-tagline: ""
-newsletter:
-  headline: ""
-  description: ""
-  cta: ""
-```
+**Tagline:** {tagline}
+**Links:** {nav links}
+**Newsletter:** {signup approach and modal copy if applicable}
+**Copyright:** {copyright line}
+
+---
 
 ## Meta Content
 
-```yaml
-pages:
-  - page: ""
-    title: ""          # browser tab / search result title
-    description: ""    # meta description for search results
-```
+| Page | Title | Description |
+|---|---|---|
+| {page} | {browser tab title} | {meta description for search results} |
 ```
 
 ### Writing Guidelines
 
+- **Pure markdown, no YAML.** The document should read like finished website copy. Headings provide structure; bold labels identify element types; prose is the actual copy.
 - Use the client's own words wherever possible — copy should sound like them, not like a copywriter
 - Be specific — "Tuesday evening anxiety that won't let you sleep" over "stress and anxiety"
 - Keep service descriptions in client language, not practitioner jargon
@@ -292,7 +324,6 @@ pages:
 - The `voice` field in the frontmatter is the consistency anchor — reference it throughout
 - Every section's copy must serve that section's stated purpose from the web design strategy
 - Flag any factual claims that the client needs to verify
-- **YAML string safety:** In multi-line YAML fields (using `|` block scalar), avoid special characters that break YAML parsing: no bare colons followed by spaces mid-line, no leading `#` characters, no unescaped quotes. If the copy contains these, wrap the value in double quotes or use `>` folded scalar instead. The mock-up subagent reads these fields programmatically.
 
 ## Integration with Mock-up Phase
 

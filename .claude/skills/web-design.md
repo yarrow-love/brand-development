@@ -134,7 +134,9 @@ Watch for contradictions (e.g., wanting an "intimate" feel but also wanting to s
 
 ## Output Format
 
-When the consultation reaches clear alignment, write the web design strategy specification to `brands/<brand>/web-design-strategy.md`:
+When the consultation reaches clear alignment, write the web design strategy specification to `brands/<brand>/web-design-strategy.md` using **pure markdown** — no YAML code blocks. The document should read like a strategic brief, not a config file. Use headings for structure, prose for narrative content, bullet lists for enumerated items, and tables where structured data genuinely benefits from it (color palettes, audience comparisons).
+
+Write the strategy to `brands/<brand>/web-design-strategy.md` using this structure:
 
 ```markdown
 ---
@@ -147,111 +149,189 @@ brand: {brand-name}
 # Web Design Strategy — {Brand Name}
 
 ## Site Purpose Statement
-[1-2 sentences: why this website exists, for whom, what it accomplishes]
+
+{1-2 sentences: why this website exists, for whom, what it accomplishes}
+
+---
 
 ## Business Context
 
-```yaml
-lifecycle_stage: ""
-objectives: []       # in priority order
-primary_cta: ""      # the single most important visitor action
-success_metrics: []
-```
+### Lifecycle Stage
+
+{Where the brand is in its growth}
+
+### Objectives (priority order)
+
+1. {Most important business outcome}
+2. {Next priority}
+{etc.}
+
+### Primary CTA
+
+{The single most important visitor action}
+
+### Secondary CTA
+
+{If applicable}
+
+### Success Metrics
+
+- {How you'll know the site is working}
+
+---
 
 ## Audiences
 
-```yaml
-primary:
-  description: ""
-  jobs_to_be_done: []
-  what_would_make_them_leave: ""
-secondary: []
-anti_visitor: ""     # who the site is not for
-```
+### Primary: {Audience Name}
+
+{Description by mindset and needs, not demographics}
+
+**What they're looking for:** {Their jobs to be done}
+**What would make them leave:** {Friction points and trust-breakers}
+
+### Secondary: {Audience Name}
+
+{Description}
+
+### Not For
+
+{Who the site is not designed to serve}
+
+---
 
 ## Site Architecture
 
-```yaml
-sitemap: []          # page list with hierarchy
-navigation_model: "" # how visitors move through the site
-most_important_page: ""
-content_inventory:
-  exists: []
-  needs_creation: []
-  dependencies: []   # blockers before design can proceed
-```
+### Sitemap
 
-## Design Tokens
+1. **{Page}** — {Its role}
+2. **{Page}** — {Its role}
+{etc., with sub-pages indented}
 
-```yaml
-color:
-  palette: {}        # from Brand DNA, with hex values
-  semantic: {}       # background, text, accent, cta mappings
-typography:
-  headings: ""       # specific typeface
-  body: ""           # specific typeface
-  scale: ""          # approach to size hierarchy
-spacing: ""          # density philosophy (airy, balanced, compact)
-shape: ""            # border radius, edge treatment approach
-motion: ""           # animation philosophy (gentle, none, energetic)
-```
+### Navigation Model
 
-## Interactions
+{How visitors move through the site}
 
-```yaml
-hover: ""
-scroll: ""
-page_transitions: ""
-microinteractions: ""
-```
+### Most Important Page
+
+{Which page is doing the most work, and why}
+
+### Content Inventory
+
+**Exists:** {What content is already available}
+
+**Needs creation:** {What must be produced before or during the build}
+
+**Dependencies / blockers:** {What must be resolved before design can proceed}
+
+---
+
+## Design Direction
+
+### Website Archetype
+
+{The archetype or hybrid that best fits the brand, with rationale}
+
+### Color Palette
+
+| Role | Color | Quality | Hex |
+|---|---|---|---|
+| Primary | {Color} | {What it expresses} | {Hex value} |
+{etc.}
+
+**Semantic color roles:** {How brand colors map to UI roles — background, text, accent, CTA, inverse sections}
+
+**Color mood:** {The overall feeling}
+
+### Typography
+
+**Headings:** {Typeface and characteristics}
+**Body:** {Typeface and characteristics}
+**Scale:** {Size hierarchy approach and rationale}
+
+### Spacing & Density
+
+{Density philosophy with specific values where known}
+
+### Motion & Animation
+
+{Animation philosophy with specific patterns}
+
+### Imagery Direction
+
+{Style, mood, subjects, what to avoid}
+
+### Shape & Edge Treatment
+
+{Border radius, organic vs geometric, edge philosophy}
+
+---
 
 ## Page Specifications
 
-```yaml
-# per key page:
-- page: ""
-  purpose: ""
-  sections: []
-  primary_action: ""
-  visual_direction: ""
-```
+### {Page Name}
+
+**Purpose:** {What this page accomplishes}
+**Sections:** {Ordered list of content sections}
+**Primary action:** {The CTA on this page}
+**Visual direction:** {How this page should feel}
+
+{Repeat for each key page}
+
+---
 
 ## Design Rules
 
-```yaml
-always: []
-never: []
-voice: ""            # how the brand speaks on this site
-photography_direction: ""
-```
+### Always
+
+- {Actionable constraint}
+
+### Never
+
+- {Actionable constraint}
+
+### Voice on the Site
+
+{How the brand speaks — tone, register, what it sounds like}
+
+### Photography Direction
+
+{Subject, lighting, mood, what to avoid}
+
+---
 
 ## Competitive Context
 
-```yaml
-references: []       # sites admired, with what specifically
-anti_references: []  # sites to avoid resembling, with why
-differentiation: ""  # what this site does that peers don't
-```
+### References
+
+{Sites admired with what specifically resonates — or "to be explored in reference gathering phase"}
+
+### Differentiation
+
+{What this site does that peers don't}
+
+---
 
 ## Constraints
 
-```yaml
-platform: ""
-timeline: ""
-maintenance: ""      # who maintains, their skill level
-budget_scope: ""
-```
+- **Platform:** {Technology choice or "deferred to tech stack phase"}
+- **Timeline:** {Deadlines or "no hard deadline"}
+- **Maintenance:** {Who maintains, their skill level}
+- **Budget:** {Constraints that shape scope}
+
+---
 
 ## Open Questions
-[Unresolved items before mock-up can begin]
+
+1. {Unresolved item before mock-up can begin}
 ```
 
 ### Writing Guidelines
 
+- **Pure markdown, no YAML.** The document should read like a strategic brief. Headings provide structure; prose carries the narrative; tables and lists organize structured data.
 - Use the client's own words wherever possible
-- Be specific in tokens — `"#0A0A0A"` not "black", `"Inter"` not "sans-serif"
-- The `design_rules.never` list is the most operationally important field for mock-up work — invest time getting it right
-- Every design token must trace back to a Brand DNA visual code or a deliberate web-specific decision made during the consultation
+- Be specific in design direction — `"#0A0A0A"` not "black", `"Inter"` not "sans-serif" — where specific values have been determined
+- The Never list is the most operationally important section for mock-up work — invest time getting it right
+- Every design choice must trace back to a Brand DNA visual code or a deliberate web-specific decision made during the consultation
 - Flag any open questions that must be resolved before design work can begin
 
 ## Integration with Design Pipeline

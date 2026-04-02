@@ -18,9 +18,10 @@ Brand development follows a natural sequence. Each phase produces a specificatio
 1. **Brand DNA** (`/discover-brand`) — The foundational interview. Captures mission, values, personality, audience, visual codes, positioning, and design rules. Everything downstream depends on this.
 2. **Web Design Strategy** (`/design-website`) — Translates Brand DNA into web-specific decisions: site purpose, architecture, design tokens, page specifications, and interaction patterns.
 3. **Copywriting** (`/write-copy`) — Drafts website copy section by section, guided by Brand DNA voice and web design strategy structure. Conversational process: draft, critique, revise, until the client says "that sounds like me."
-4. **Reference Gathering** (`/gather-references`) — Discovers, captures, and discusses competitor and inspiration websites. Builds a visual reference board with specific elements to adopt or avoid, grounding the mock-up in real examples the client has reacted to.
-5. **Mock-up** (`/build-mockup`) — Assembles the website as static HTML/Tailwind, sourcing stock imagery, applying design tokens, and inserting approved copy. Built by a subagent; reviewed with the client in the main thread. Iterated until the client approves.
-6. **Future phases** — Final build (functional site with CMS/booking), art direction, product development, and other expressions of the brand identity follow the same pattern: load the DNA, consult, capture, specify.
+4. **Legal Documents** (`/write-legal`) — Drafts protective legal documents: disclaimers, privacy policy, terms of service, testimonial compliance, and affiliate disclosures. Subagent-drafted using industry research, reviewed with the client. Attorney review before publication is a launch dependency.
+5. **Reference Gathering** (`/gather-references`) — Discovers, captures, and discusses competitor and inspiration websites. Builds a visual reference board with specific elements to adopt or avoid, grounding the mock-up in real examples the client has reacted to.
+6. **Mock-up** (`/build-mockup`) — Assembles the website as static HTML/Tailwind, sourcing stock imagery, applying design tokens, and inserting approved copy. Built by a subagent; reviewed with the client in the main thread. Iterated until the client approves.
+7. **Future phases** — Final build (functional site with CMS/booking), art direction, product development, and other expressions of the brand identity follow the same pattern: load the DNA, consult, capture, specify.
 
 Never skip Brand DNA. If a client wants to jump to web design or product development without a Brand DNA document, redirect them to `/discover-brand` first.
 
@@ -32,6 +33,7 @@ research/                          # Industry-specific context
     brand-dna.md
     web-design.md
     copywriting.md
+    legal.md
   <industry>/
     ...
 
@@ -40,6 +42,7 @@ brands/                            # All brand artifacts, one directory per bran
     brand-dna.md                   # Output of /discover-brand
     web-design-strategy.md         # Output of /design-website
     copy.md                        # Output of /write-copy
+    legal.md                       # Output of /write-legal
     references.md                  # Output of /gather-references
     references/                    # Screenshots captured during reference gathering
     mock-up/                       # Output of mock-up phase (HTML/Tailwind)

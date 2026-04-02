@@ -166,14 +166,20 @@ review/                 # Screenshots for review (generated after build)
 - Mobile-responsive (Tailwind responsive classes)
 - No JavaScript required — this is a visual mock-up, not a functional site
 
-### Design Tokens
-Apply these tokens from the web design strategy exactly. Never invent colors,
-fonts, or spacing values outside the token spec:
-- Color: use the semantic color roles (bg.base, text.primary, interactive.default, etc.)
-- Typography: use the specified typefaces (load from Google Fonts CDN if web fonts)
-- Spacing: follow the density profile specified
-- Shape: border-radius, image aspect ratios as specified
-- Motion: CSS transitions per the motion profile (for hover states)
+### Design Direction
+The web design strategy provides direction, not a paint-by-numbers spec.
+Use the strategy's visual codes, color mood, typography choices, and spacing
+philosophy as your guide — but make informed creative decisions within that
+direction. Choose specific hex values, spacing values, and visual treatments
+that serve the brand's described feeling.
+- Color: use the palette direction and mood from the strategy (e.g., "luminous sky blue,
+  aqua, opalescent white") to select specific hex values that achieve the intended feeling
+- Typography: use the specified typefaces (load from Google Fonts CDN)
+- Spacing: follow the density philosophy described (e.g., "Sanctuary density — generous,
+  meditative") and choose specific values that feel right
+- Shape: choose border-radius, edge treatments, and visual effects (e.g., glassmorphism)
+  that align with the brand's described spatial feeling
+- Motion: CSS transitions per the motion philosophy (for hover states)
 
 ### Copy
 Insert the approved copy from copy.md exactly as written. Do not rewrite,
@@ -220,22 +226,62 @@ Build these once and include in every page:
 - Footer (per strategy spec: columns, newsletter, social, legal)
 - CTA sections (reusable call-to-action blocks)
 
+### Visual Inspection Loop
+
+**Critical:** Do not build blind. Use an iterative render-inspect-adjust cycle
+to verify that your design choices actually achieve the intended feeling.
+Writing HTML/CSS without seeing the result is guessing. Seeing is designing.
+
+**Process:**
+
+1. **Build the homepage first** — get it to a complete state
+2. **Serve it locally:**
+   ```bash
+   npx http-server brands/<brand>/mock-up/ -p 8080 &
+   ```
+3. **Screenshot with Playwright:**
+   ```bash
+   npx playwright screenshot 'http://localhost:8080' 'brands/<brand>/mock-up/review/homepage-viewport.png'
+   npx playwright screenshot --full-page 'http://localhost:8080' 'brands/<brand>/mock-up/review/homepage-full.png'
+   npx playwright screenshot --viewport-size='375,812' 'http://localhost:8080' 'brands/<brand>/mock-up/review/homepage-mobile.png'
+   ```
+4. **Read and evaluate the screenshots** — compare against the Brand DNA visual codes:
+   - Does the color palette feel luminous/earthy/clinical/whatever the direction specifies?
+   - Does the spacing feel generous enough? Too tight? Too sparse?
+   - Does the typography hierarchy read clearly?
+   - Does the overall composition feel harmonious?
+   - Does this pass the "squint test" — at arm's length, does the rhythm feel right?
+5. **Adjust and re-screenshot** — iterate until the homepage meets the brand direction
+6. **Then build remaining pages** using the homepage as the established standard
+7. **Screenshot each page** for review — catch inconsistencies across pages
+
+**Repeat the inspect-adjust cycle for each page.** The review/ directory should
+contain viewport, full-page, and mobile screenshots of every page by the time
+the build is complete.
+
+**Kill the server when done:**
+```bash
+kill $(lsof -t -i:8080) 2>/dev/null
+```
+
 ### Quality Checks
 Before finishing:
 - [ ] All pages render cleanly at desktop (1440px) and mobile (375px) widths
 - [ ] All copy from copy.md is placed — no lorem ipsum anywhere
 - [ ] All images are downloaded and display (no broken images)
-- [ ] Color palette matches strategy tokens — no invented colors
-- [ ] Typography matches strategy tokens — correct typefaces loaded
+- [ ] Color choices serve the brand's described mood and feeling
+- [ ] Specified typefaces are loaded and rendering correctly
 - [ ] Primary CTA is prominent and consistent across pages
 - [ ] Navigation works (links between pages use relative paths)
+- [ ] Visual inspection screenshots exist for every page in review/
 - [ ] The site can be served with 'npx http-server brands/<brand>/mock-up/'
 
 Write a build summary to brands/<brand>/mock-up/build-notes.md:
 - What was built (pages, sections)
 - Which images were sourced and from where
-- Any strategy spec decisions that required interpretation
-- Any open questions or areas where the spec was ambiguous
+- Design decisions made: specific hex values chosen, spacing values, visual effects
+- What the visual inspection revealed and what was adjusted
+- Any open questions or areas where the strategy was ambiguous
 - Suggestions for the client review"
 ```
 
@@ -295,9 +341,10 @@ Serve with: `npx http-server brands/<brand>/mock-up/ -p 8080`
 
 - The mock-up is a visual artifact, not production code — prioritize appearance over engineering
 - Use Tailwind utility classes for speed; custom CSS only where Tailwind can't express the design
-- Every design decision must trace back to the strategy spec or reference board — no aesthetic improvisation
+- Design decisions should be grounded in the strategy's direction and the Brand DNA's visual codes — creative interpretation within the established direction, not arbitrary invention
 - Images should feel intentional, not decorative — each image serves the section's purpose
 - The mock-up should pass the "squint test" — viewed at arm's length, does the overall color, density, and rhythm feel like the brand?
+- **Visual inspection is not optional.** The render-inspect-adjust cycle is the core quality mechanism. Never deliver a mock-up you haven't seen rendered in a browser via Playwright screenshots.
 
 ## Integration with Final Build
 

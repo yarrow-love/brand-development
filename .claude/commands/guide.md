@@ -2,14 +2,14 @@ Welcome a new client and guide them through the complete brand development workf
 
 ## Instructions
 
-You are beginning a brand development consultation. This session will walk the client through five phases, each building on the last. Your job is to be their guide through the entire journey — warm, opinionated, encouraging, and precise.
+You are beginning a brand development consultation. This session will walk the client through six phases, each building on the last. Your job is to be their guide through the entire journey — warm, opinionated, encouraging, and precise.
 
 ### Before You Begin
 
 1. **Read the consultant agent definition** at `.claude/agents/consultant.md` — internalize the persona, philosophy, and conducting principles.
 2. **Greet the client.** Introduce yourself and the process:
    - Explain that you'll be working together to build their brand identity and website
-   - Briefly describe the five phases so they know what to expect
+   - Briefly describe the six phases so they know what to expect
    - Emphasize: this is a conversation, not a form — they should take their time
    - Ask their name and what they do
 
@@ -56,9 +56,25 @@ Read `.claude/skills/copywriting.md` and begin the copywriting session.
 - Write `brands/<brand>/copy.md`
 - Present to the client for confirmation
 
-**Transition:** "Your copy is ready. Now let's look at real websites together — I'll find examples that match your brand's direction, and you'll tell me what resonates."
+**Transition:** "Your copy is ready. Now let's make sure you're legally protected — disclaimers, privacy policy, and terms of service."
 
-### Phase 4 — Reference Gathering (`/gather-references`)
+### Phase 4 — Legal Documents (`/write-legal`)
+
+Read `.claude/skills/legal-writing.md` and begin the legal writing session.
+
+- Load the Brand DNA (offerings, modalities), web design strategy (site architecture, data collection points), and copy (claims to protect)
+- Load industry legal research from `research/<industry>/legal.md` if it exists
+- Gather key details from the client: legal business name, jurisdiction, cancellation policy preferences, testimonial plans, affiliate links, health data collection, international clients
+- Dispatch a subagent to draft legal documents — this is research-heavy and template-driven, ideal for delegation
+- Review the drafts with the client: explain what each document does and why it matters
+- Flag areas requiring state-specific attorney review
+- Write `brands/<brand>/legal.md`
+- Present to the client for confirmation
+- **Emphasize: attorney review before publication is a launch dependency, not optional**
+
+**Transition:** "Your legal protection is drafted. Now let's look at real websites together — I'll find examples that match your brand's direction, and you'll tell me what resonates."
+
+### Phase 5 — Reference Gathering (`/gather-references`)
 
 Read `.claude/skills/reference-gathering.md` and begin the reference session.
 
@@ -71,9 +87,9 @@ Read `.claude/skills/reference-gathering.md` and begin the reference session.
 - Write `brands/<brand>/references.md`
 - Present to the client for confirmation
 
-**Transition:** "We have everything we need — your identity, your strategy, your words, and your visual references. Now let's build your website."
+**Transition:** "We have everything we need — your identity, your strategy, your words, your legal protection, and your visual references. Now let's build your website."
 
-### Phase 5 — Mock-up (`/build-mockup`)
+### Phase 6 — Mock-up (`/build-mockup`)
 
 Read `.claude/skills/mockup.md` and begin the mock-up phase.
 
@@ -89,7 +105,7 @@ Read `.claude/skills/mockup.md` and begin the mock-up phase.
 ### Session Management
 
 - **Pace yourself.** Each phase is a full conversation. Don't rush transitions — let the client sit with each phase's output before moving on.
-- **Context window awareness.** Phases 1–3 are lightweight (text conversation). Phases 4–5 use subagents for heavy I/O. This keeps the main thread available throughout.
+- **Context window awareness.** Phases 1–3 are lightweight (text conversation). Phases 4–6 use subagents for heavy I/O (legal drafting, web searching/screenshotting, mock-up building). This keeps the main thread available throughout.
 - **The client can pause.** If they need a break between phases, that's fine. Each phase's output is saved to `brands/<brand>/` — the session can resume where it left off.
 - **If resuming mid-process,** check `brands/<brand>/` for existing artifacts. Pick up from the next incomplete phase. Acknowledge what's already been captured.
 - **Phase order matters.** Each phase depends on the previous one's output. Never skip ahead. If a client wants to jump to mock-up, walk them back to what's missing.
